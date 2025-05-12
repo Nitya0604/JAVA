@@ -1,0 +1,13 @@
+import mypackage.ExternalClass;
+import mypackage.InternalClass;
+public class MainClass {
+ public static void main(String[] args) {
+ // Create an instance of ExternalClass
+ ExternalClass external = new ExternalClass();
+ external.display(); // Accessing method from ExternalClass
+ // Create an instance of InternalClass
+ InternalClass internal = new InternalClass();
+ internal.show();
+// Accessing method from InternalClass
+ }
+}
