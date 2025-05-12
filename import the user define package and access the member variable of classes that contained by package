@@ -1,0 +1,9 @@
+import mypackage.Person;
+public class MainClass {
+ public static void main(String[] args) {
+ // Create an instance of Person
+ Person person = new Person("Alice");
+ // Accessing the member variable
+ System.out.println("Person's name: " + person.name);
+ }
+}
