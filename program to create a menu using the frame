@@ -1,0 +1,51 @@
+import java.awt.*;
+import java.awt.event.*;
+public class AWTMenuExample extends Frame implements ActionListener {
+ AWTMenuExample() {
+ // Create menu bar
+ MenuBar menuBar = new MenuBar();
+ // Create "Draw" menu
+ Menu drawMenu = new Menu("Draw");
+ MenuItem line = new MenuItem("Line");
+ MenuItem multiLine = new MenuItem("Multi Line");
+ MenuItem rectangle = new MenuItem("Rectangle");
+ MenuItem pentagon = new MenuItem("Pentagon");
+ MenuItem circle = new MenuItem("Circle");
+ // Add items to "Draw"
+ drawMenu.add(line);
+ drawMenu.add(multiLine);
+ drawMenu.add(rectangle);
+ drawMenu.add(pentagon);
+ drawMenu.add(circle);
+ // Add action listeners
+ line.addActionListener(this);
+ multiLine.addActionListener(this);
+ rectangle.addActionListener(this);
+ pentagon.addActionListener(this);
+ circle.addActionListener(this);
+ // Create "Help" menu
+ Menu helpMenu = new Menu("Help");
+ // Add menus to the menu bar
+ menuBar.add(drawMenu);
+ menuBar.add(helpMenu);
+ // Set menu bar to the frame
+ setMenuBar(menuBar);
+ // Frame settings
+ setTitle("AWT Window Demo");
+ setSize(400, 300);
+ setLayout(null);
+ setVisible(true);
+ // Add window close handler
+ addWindowListener(new WindowAdapter() {
+ public void windowClosing(WindowEvent e) {
+ dispose();
+ }
+ });
+ }
+public void actionPerformed(ActionEvent e) {
+ System.out.println(e.getActionCommand() + " selected");
+ }
+ public static void main(String[] args) {
+ new AWTMenuExample();
+ }
+}
